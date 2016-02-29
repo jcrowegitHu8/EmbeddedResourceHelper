@@ -1,0 +1,1 @@
+﻿This resource file is to be able to unit test that we can retrieve a resource from a remote or specified assembly.

@@ -1,0 +1,1 @@
+﻿This is to test that the executing assembly method is able to find the correct resource file.

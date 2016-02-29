@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmbeddedResourceHelper", "EmbeddedResourceHelper\EmbeddedResourceHelper.csproj", "{C64A368A-4EB4-4F81-AF18-C1A250C33049}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmbeddedResourceHelperTest", "EmbeddedResourceHelperTest\EmbeddedResourceHelperTest.csproj", "{3F83E5FD-A902-4E6D-8D3C-54247D9B2823}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6E753C5F-58A0-44DB-A33F-F966C77B030F}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C64A368A-4EB4-4F81-AF18-C1A250C33049}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C64A368A-4EB4-4F81-AF18-C1A250C33049}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C64A368A-4EB4-4F81-AF18-C1A250C33049}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C64A368A-4EB4-4F81-AF18-C1A250C33049}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F83E5FD-A902-4E6D-8D3C-54247D9B2823}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F83E5FD-A902-4E6D-8D3C-54247D9B2823}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F83E5FD-A902-4E6D-8D3C-54247D9B2823}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F83E5FD-A902-4E6D-8D3C-54247D9B2823}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

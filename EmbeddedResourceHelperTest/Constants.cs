@@ -7,15 +7,19 @@ namespace EmbeddedResourceHelperTest
 {
     class Constants
     {
-        
         public static string fileName1NoExtension = "Resource1";
         public static string fileName1WithExtension = fileName1NoExtension + ".txt";
-
         
         public static string fileName2NoExtension = "Resource2";
         public static string fileName2WithExtension = fileName2NoExtension + ".txt";
 
         public static string fileName3NoExtension = "sample_pdf";
         public static string fileName3WithExtension = fileName3NoExtension + ".pdf";
+
+        public static string fileName3NoExtensionWithDottedPath = @"Resources.sample_pdf";
+        public static string fileName3WithExtensionWithDottedPath = fileName1NoExtension + ".pdf";
+
+        public static string fileName3NoExtensionWithSlashPath = @"Resources/sample_pdf";
+        public static string fileName3WithExtensionWithSlashPath = fileName1NoExtension + ".pdf";
     }
 }

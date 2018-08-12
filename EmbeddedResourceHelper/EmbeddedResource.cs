@@ -15,6 +15,33 @@ namespace EmbeddedResourceHelper
         /// </summary>
         /// <param name="resourceFileName">A file name to be used in a contains search</param>
         /// <returns>IO.Stream that the user should dispose of</returns>
+        public static Byte[] GetAsByteArrayFromCallingAssembly(string resourceFileName)
+        {
+            return GetAsByteArray(Assembly.GetCallingAssembly(), resourceFileName);
+        }
+
+        public static Byte[] GetAsByteArray(Assembly assembly, string resourceFileName)
+        {
+            var fullFileName = FindResourceByFileName(assembly, resourceFileName);
+            if (!string.IsNullOrEmpty(fullFileName))
+            {
+                using (var embeddedStream = assembly.GetManifestResourceStream(fullFileName))
+                {
+                    if (embeddedStream == null) return null;
+                    byte[] ba = new byte[embeddedStream.Length];
+                    embeddedStream.Read(ba, 0, ba.Length);
+                    return ba;
+                }
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Finds the resource file in the assembly that called this method.
+        /// </summary>
+        /// <param name="resourceFileName">A file name to be used in a contains search</param>
+        /// <returns>IO.Stream that the user should dispose of</returns>
         public static Stream GetAsStreamFromCallingAssembly(string resourceFileName)
         {
             return GetAsStream(Assembly.GetCallingAssembly(), resourceFileName);
@@ -86,7 +113,11 @@ namespace EmbeddedResourceHelper
         private static string FindResourceByFileName(Assembly assembly, string fileName)
         {
             var result = string.Empty;
-            result = assembly.GetManifestResourceNames().FirstOrDefault(n => n.ToLower().Contains(fileName.ToLower()));
+            if (!string.IsNullOrWhiteSpace(fileName))
+            {
+                result = assembly.GetManifestResourceNames()
+                    .FirstOrDefault(n => n.ToLower().Contains(fileName.Replace("/",".").ToLower()));
+            }
             return result;
         }
     }
